@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2 - NYT</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- User actions and NYT Logo -->
+        <div class="top-banner">
+            <div class="todays-stuff">
+                <div id="todays-date">TODAY'S DATE</div>    <!-- this gets replaced using JavaScript -->
+                <a id="todays-paper" href="https://www.nytimes.com/section/todayspaper">Today's Paper</a>
+            </div>
+            <img class="logo" src="assets/The_New_York_Times_logo.png" alt="The New York Times logo">
+            <a href="https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=vi&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fsubscription%2Fonboarding-offer%3FcampaignId%3D7JFJX%26EXIT_URI%3Dhttps%253A%252F%252Fwww.nytimes.com%252F&asset=masthead" id="login-button">LOG IN</a>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="main-nav">
+            <a href="#">U.S.</a>
+            <a href="#">World</a>
+            <a href="#">Business</a>
+            <a href="#">Arts</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">Opinion</a>
+            <a href="#">Audio</a>
+            <a href="#">Games</a>
+            <a href="#">Cooking</a>
+            <a href="#">Books</a>
+            <a href="#">Wirecutter</a>
+            <a href="#">The Athletic</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- News Articles - will be populated with NYT API -->
+        <section>
+            <div class="main-content"></div>
+        </section>
+
+        <!-- NYT Games -->
+         <section>
+            <div class="games-section">
+                <div class="games-header">
+                    <h3>Games</h3>
+                    <p>Daily puzzles</p>
+                </div>
+                <div class="games-container">
+                    <a href="https://www.nytimes.com/games/wordle/index.html" class="game">
+                        <div class="game-description">
+                            <h3>Wordle</h3>
+                            <p>Guess the 5-letter word with 6 chances.</p>
+                        </div>
+                        <img src="assets/wordle_game.png" alt="Wordle Game Logo" class="game-image">
+                    </a>
+                
+                    <a href="https://www.nytimes.com/games/connections?GAMES_connectionsRollout_1130=1_ConnectionsV2" class="game">
+                        <div class="game-description">
+                            <h3>Connections</h3>
+                            <p>Group words that share a common thread.</p>
+                        </div>
+                        <img src="assets/connections_game.png" alt="Connections Game Logo" class="game-image">
+                    </a>
+
+                    <a href="https://www.nytimes.com/games/strands" class="game">
+                        <div class="game-description">
+                            <h3>Strands</h3>
+                            <p>Uncover hidden words and reveal the theme.</p>
+                        </div>
+                        <img src="assets/strands_game.png" alt="Strands Game Logo" class="game-image">
+                    </a>
+                
+                    <a href="https://www.nytimes.com/puzzles/spelling-bee" class="game">
+                        <div class="game-description">
+                            <h3>Spelling Bee</h3>
+                            <p>How many words can you make with 7 letters?</p>
+                        </div>
+                        <img src="assets/spelling_bee_game.png" alt="Spelling Bee Game Logo" class="game-image">
+                    </a>
+                
+                    <a href="https://www.nytimes.com/crosswords" class="game">
+                        <div class="game-description">
+                            <h3>The Crossword</h3>
+                            <p>Get clued in with wordplay, every day.</p>
+                        </div>
+                        <img src="assets/crossword_game.png" alt="Crossword Game Logo" class="game-image">
+                    </a>
+                
+                    <a href="https://www.nytimes.com/crosswords/game/mini" class="game">
+                        <div class="game-description">
+                            <h3>The Mini Crossword</h3>
+                            <p>Solve this bite-sized puzzle in just a few minutes.</p>
+                        </div>
+                        <img src="assets/mini_crossword_game.png" alt="Mini Crossword Game Logo" class="game-image">
+                    </a>
+                </div>
+            </div>
+         </section>
+    </main>
+
+    <footer>
+        <!---Category Navigation-->
+        <img class="logo" src="assets/The_New_York_Times_logo.png" alt="The New York Times logo">
+
+        <div class="footer-categories">
+            <div class="footer-section">
+                <h3>NEWS</h3>
+                <ul>
+                    <li><a href="#">Home Page</a></li>
+                    <li><a href="#">U.S.</a></li>
+                    <li><a href="#">World</a></li>
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">New York</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Tech</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Weather</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ARTS</h3>
+                <ul>
+                    <li><a href="#">Book Review</a></li>
+                    <li><a href="#">Best Sellers Book List</a></li>
+                    <li><a href="#">Dance</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Pop Culture</a></li>
+                    <li><a href="#">Television</a></li>
+                    <li><a href="#">Theater</a></li>
+                    <li><a href="#">Visual Arts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>LIFESTYLE</h3>
+                <ul>
+                    <li><a href="#">Health</a></li>
+                    <li><a href="#">Well</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Restaurant Reviews</a></li>
+                    <li><a href="#">Love</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Style</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">T Magazine</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>OPINION</h3>
+                <ul>
+                    <li><a href="#">Today's Opinion</a></li>
+                    <li><a href="#">Columinsts</a></li>
+                    <li><a href="#">Editorials</a></li>
+                    <li><a href="#">Guest Essays</a></li>
+                    <li><a href="#">Op-Docs</a></li>
+                    <li><a href="#">Letters</a></li>
+                    <li><a href="#">Sunday Opinion</a></li>
+                    <li><a href="#">Opinion Video</a></li>
+                    <li><a href="#">Opinion Audio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>MORE</h3>
+                <ul>
+                    <li><a href="#">Audio</a></li>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">Cooking</a></li>
+                    <li><a href="#">Wirecutter</a></li>
+                    <li><a href="#">The Athletic</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Graphics</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Live Events</a></li>
+                    <li><a href="#">Corrections</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--- Legal Stuff -->
+        <div class="footer-bottom">
+            <a href="#">© 2025 The New York Times Company</a>
+            <div id = "footer-line-1">
+                <a href="#">NYTCo</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Accessibility</a> 
+                <a href="#">Work with us</a>
+                <a href="#">Advertise</a>
+                <a href="#">T Brand Studio</a> 
+                <a href="#">Your Ad Choices</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Terms of Sale</a>
+                <a href="#">Site Map</a>
+                <a href="#">Help</a> 
+                <a href="#">Subscriptions</a>
+            </div>
+            <div id = "footer-line-2">
+                <a href="#">Your Privacy Choices</a>
+                <a href="#">California Notices</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

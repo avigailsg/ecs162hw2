@@ -1,0 +1,285 @@
+/* Header Styles */
+
+header {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 10px 0;
+}
+  
+.top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.todays-stuff {
+    display: flex;
+    flex-direction: column;
+}
+
+#todays-paper {
+    color: black;
+}
+
+#todays-paper:hover {
+    color: gray;
+}
+
+.logo {
+    height: 50px;
+}
+
+#login-button {
+    background-color: #567b95;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#login-button:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+.main-nav {
+    display: flex;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Body Styles */
+
+/* DEFAULT DESIGN: Desktop View (width > 1024px): Display three columns of content.  */
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-family: georgia, "times new roman", times, serif;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* this makes it into 3 columns */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.article {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: "nyt-cheltenham", georgia, "times new roman", serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.article h2:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.article p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.games-section {
+    border-top: 1px solid #e2e2e2;
+    padding-top: 20px;
+}
+
+.games-header {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+}
+
+.games-header p {
+    font-style: italic;
+}
+
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* I also want the game section to be in 3 columns */
+    gap: 30px;
+}
+
+.game {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    border: 1px solid #e2e2e2;
+    padding: 15px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.game:hover {
+    color: gray;
+}
+
+.game-description {
+    flex: 2;  /* makes it take up 2/3 of the space */
+    padding-right: 15px;
+}
+
+.game p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.game-image {
+    flex: 1;  /* makes it take up 1/3 of the space */
+    max-width: 33%;
+    object-fit: contain;
+}
+
+
+/* Footer Styles */
+
+footer {
+    margin-top: 50px;
+    border-top: 1px solid #e2e2e2;
+    padding: 20px 0;
+}
+
+.footer-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 0.9rem;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.footer-categories a {
+    text-decoration: none;
+    color: #333;
+    white-space: nowrap;
+}
+
+.footer-section li {
+    margin-bottom: 5px;
+}
+
+.footer-categories li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-categories ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    gap: 15px; 
+}
+
+.footer-bottom a {
+    color: gray;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+#footer-line-1, #footer-line-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+}
+
+
+/* Tablet View (width between 768px and 1024px): Display two columns of content - for both the articles and game section */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .games-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View (width < 768px): Display a single column of content - for both the articles and game section */
+@media (max-width: 768px) {
+    /* change layout of top banner to column when small screen width */
+    .top-banner {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .todays-stuff {
+        align-items: center;
+    }
+      
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .article {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .article-image {
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    .games-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-sections {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
