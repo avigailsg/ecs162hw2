@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let formattedDate = today.toLocaleDateString('en-US', options);
     document.getElementById("todays-date").textContent = formattedDate;
 
-    // get the key from backend 
+    // get the nyt api key from backend 
     fetch('/api/key')
         .then(statusCheck)
         .then(resp => resp.json())
         .then(data => {
-            // Store API key in a variable
+            // store API key in a variable
             const apiKey = data.apiKey;
-            // Make the NYT request
+            // make the NYT request
             makeRequest(apiKey);
         })
         .catch(err => {
@@ -35,14 +35,13 @@ function makeRequest(apiKey) {
 }
 
 function processData(responseData) {
-    // Get the articles from the response
+    // Get the articles
     const articles = responseData.response.docs;
-    //console.log("Articles fetched:", articles.length);
     
-    // Get the main-content div where we'll add the articles
+    // main-content div is where we'll add the articles
     const mainContent = document.querySelector('.main-content');
     
-    // Add each article to the main content
+    // Add each article to the page
     articles.forEach(article => {
         // Create article container
         const articleDiv = document.createElement('div');
@@ -53,7 +52,7 @@ function processData(responseData) {
         heading.textContent = article.headline.main;
         articleDiv.appendChild(heading);
 
-        // Add image if available
+        // Add image if there is one
         if (article.multimedia && article.multimedia.default && article.multimedia.default.url) {
             const img = document.createElement('img');
             img.className = 'article-image';
@@ -67,7 +66,7 @@ function processData(responseData) {
         paragraph.textContent = article.abstract;
         articleDiv.appendChild(paragraph);
         
-        // Add the article to the main content div
+        // Add this article to the main content div
         mainContent.appendChild(articleDiv);
     });
 }
