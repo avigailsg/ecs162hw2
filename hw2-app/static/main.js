@@ -64,7 +64,7 @@ function processData(responseData) {
         
         // Add article summary
         const paragraph = document.createElement('p');
-        paragraph.textContent = article.abstract || article.snippet || article.lead_paragraph || '';
+        paragraph.textContent = article.abstract;
         articleDiv.appendChild(paragraph);
         
         // Add the article to the main content div
